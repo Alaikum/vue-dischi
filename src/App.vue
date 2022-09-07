@@ -1,23 +1,27 @@
 <template>
   <div id="app">
+    <HeaderAndLogo />
+    <ListDiscs />
 
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <div class="text-center">ciao</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ListDiscs from './components/ListDiscs.vue'
+import HeaderAndLogo from './components/headerAndLogo.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ListDiscs,
+    HeaderAndLogo
   }
 }
 </script>
 
 <style lang="scss">
 @import "../src/style/general.scss";
-
+#app{
+  background-color: $--main-color;
+}
 </style>

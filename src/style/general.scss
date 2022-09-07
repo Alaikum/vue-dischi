@@ -1,14 +1,23 @@
-// @import "~@fontsource/advent-pro";
+@import "~@fontsource/advent-pro/500.css";
+@import "../style/vars.scss";
 
+html{
+    background-color: $--main-color;
+    height: 100vh;
+
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
+
 div { 
-    color: cyan;
     font-family: "Advent Pro", sans-serif; 
+   
+ 
  
 }

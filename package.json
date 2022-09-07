@@ -10,6 +10,8 @@
   "dependencies": {
     "@fontsource/advent-pro": "^4.5.8",
     "@fontsource/open-sans": "^4.5.11",
+    "axion": "^0.1.0",
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.8.3",
