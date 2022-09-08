@@ -4,7 +4,7 @@
     <LoadComp v-if="listDisc.length<10  || show===false " />
     <div class="main">
       <div class="container">
-        <select name="" id="" v-model="author">
+        <select class="rounded" name="" id="" v-model="author">
           <option value="">Tutti Gli Artisti</option>
           <option v-for="(disc,i) in filterdSongs" :key="i" :value="disc.author">{{disc.author}}</option>
         </select>
@@ -50,9 +50,9 @@ export default {
         const find = this.musicGenre.toLowerCase()
         const authors = el.author.toLowerCase()
         const findAuthor = this.author.toLowerCase()
-        if (genre.includes(find)&&authors.includes(findAuthor)) {
+        if (genre.includes(find) && authors.includes(findAuthor)) {
           return true
-        } 
+        }
         return false
       })
     }
@@ -99,10 +99,26 @@ export default {
   background-color: $--main-color;
   transform: translateY(80px);
 
- 
+
 
   .container {
     background-color: $--second-color;
+
+    select {
+        max-height: 40px;
+        align-self: center;
+        font-size: 2rem;
+        background-color: $--second-color;
+        color: white;
+        text-transform: uppercase;
+        position: absolute;
+
+        &:hover {
+            cursor: pointer;
+           color: cyan;
+        }
+
+    }
 
     .row {
       background-color: $--main-color;
