@@ -1,6 +1,7 @@
 <template>
     <div class="header">
        <img src="../assets/logoSpot.png" alt="">
+    
     </div>
 </template>
 

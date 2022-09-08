@@ -10,6 +10,11 @@
   "dependencies": {
     "@fontsource/advent-pro": "^4.5.8",
     "@fontsource/open-sans": "^4.5.11",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/vue-fontawesome": "^2.0.8",
     "axion": "^0.1.0",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",

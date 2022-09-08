@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+   
     <HeaderAndLogo />
     <ListDiscs />
 
@@ -10,12 +11,14 @@
 import ListDiscs from './components/ListDiscs.vue'
 import HeaderAndLogo from './components/headerAndLogo.vue';
 
+
 export default {
   name: 'App',
   components: {
     ListDiscs,
-    HeaderAndLogo
-  }
+    HeaderAndLogo,
+    
+}
 }
 </script>
 
