@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ visibile()}}
+    
     <LoadComp v-if="listDisc.length<10  || show===false " />
     <div class="main">
 
@@ -45,6 +45,7 @@ export default {
       })
       .finally(() => {
         console.log("Finito");
+         this.visibile()
       });
   },
   methods: {
