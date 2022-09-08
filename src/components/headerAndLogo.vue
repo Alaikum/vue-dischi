@@ -2,7 +2,7 @@
     <div class="header">
         <img src="../assets/logoSpot.png" alt="">
 
-        <select class="rounded" v-model="genere" name="" id="" @click="$emit('search', genere)">
+        <select class="rounded" v-model="genere" name="" id="" @change="$emit('search', genere)">
             <option value="">Tutti i Generi</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>

@@ -4,6 +4,10 @@
     <LoadComp v-if="listDisc.length<10  || show===false " />
     <div class="main">
       <div class="container">
+        <select name="" id="" v-model="author">
+          <option value="">Tutti Gli Artisti</option>
+          <option v-for="(disc,i) in filterdSongs" :key="i" :value="disc.author">{{disc.author}}</option>
+        </select>
         <div class="row g-5">
           <div class="col_" v-for="(disc,i) in filterdSongs" :key="i">
 
@@ -28,7 +32,9 @@ export default {
     return {
       listDisc: [],
       show: false,
-      contatore: 0
+      contatore: 0,
+      author: ""
+
     };
   },
   props: {
@@ -37,14 +43,16 @@ export default {
       default: ''
     }
   },
-  computed:{
-    filterdSongs(){
-      return this.listDisc.filter((el)=>{
-        const genre=el.genre.toLowerCase()
-        const find= this.musicGenre.toLowerCase()
-        if(genre.includes(find)){
+  computed: {
+    filterdSongs() {
+      return this.listDisc.filter((el) => {
+        const genre = el.genre.toLowerCase()
+        const find = this.musicGenre.toLowerCase()
+        const authors = el.author.toLowerCase()
+        const findAuthor = this.author.toLowerCase()
+        if (genre.includes(find)&&authors.includes(findAuthor)) {
           return true
-        }
+        } 
         return false
       })
     }
@@ -77,6 +85,7 @@ export default {
 
     }
 
+
   },
   components: { DiscCard, LoadComp }
 }
@@ -90,7 +99,7 @@ export default {
   background-color: $--main-color;
   transform: translateY(80px);
 
-
+ 
 
   .container {
     background-color: $--second-color;
