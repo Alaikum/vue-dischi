@@ -1,7 +1,7 @@
 <template>
   <div>
     {{ visibile()}}
-    <LoadComp v-if="listDisc.length <11 && show===false" />
+    <LoadComp v-if="listDisc.length<10  || show===false " />
     <div class="main">
 
       <div class="container">
@@ -29,6 +29,7 @@ export default {
     return {
       listDisc: [],
       show: false,
+      contatore: 0
     };
   },
   created() {
@@ -46,16 +47,17 @@ export default {
         console.log("Finito");
       });
   },
-  methods:{
+  methods: {
     visibile() {
-            setTimeout( () =>{
-              console.log(this.listDisc.length)
-                this.show=true
-            console.log(this.show)
-              },  2000)
+      setTimeout(() => {
+        this.contatore++
+        console.log('lanciata',+this.contatore)
+        this.show = true
+        console.log(this.show)
+      }, 2000)
 
-        }
-    
+    }
+
   },
   components: { DiscCard, LoadComp }
 }
