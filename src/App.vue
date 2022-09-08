@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-   
-    <HeaderAndLogo />
-    <ListDiscs />
+
+    <HeaderAndLogo @search="musicalGenre" />
+ 
+    <ListDiscs :musicGenre="genreProp" />
 
   </div>
 </template>
@@ -17,14 +18,30 @@ export default {
   components: {
     ListDiscs,
     HeaderAndLogo,
-    
-}
+
+  },
+  data() {
+    return {
+      genreProp: ''
+    }
+  },
+  methods: {
+    musicalGenre(data) {
+      console.log(data)
+      this.genreProp = data
+    }
+  }
+
+
 }
 </script>
 
 <style lang="scss">
 @import "../src/style/general.scss";
-#app{
+
+#app {
   background-color: $--main-color;
 }
+
+
 </style>

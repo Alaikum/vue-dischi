@@ -3,8 +3,9 @@
     <div class="card p-3">
       <img class="card-img-top" :src="info.poster" alt="info.title">
         <div class="card-body text-center">
-            <h4 class="card-title ">{{info.title}}</h4>
-            <p class="card-text">{{info.author}} <br/> {{info.year}}</p>
+            <h4 class="card-title ">{{info.title}} </h4>
+            <p class="card-text">{{info.author}} <br/> {{info.year}}</p> 
+            
         </div> 
         
        

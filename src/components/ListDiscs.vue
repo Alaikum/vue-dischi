@@ -1,12 +1,11 @@
 <template>
   <div>
-    
+
     <LoadComp v-if="listDisc.length<10  || show===false " />
     <div class="main">
-
       <div class="container">
         <div class="row g-5">
-          <div class="col_" v-for="(disc,i) in listDisc" :key="i">
+          <div class="col_" v-for="(disc,i) in filterdSongs" :key="i">
 
             <DiscCard :info="disc" />
           </div>
@@ -32,11 +31,30 @@ export default {
       contatore: 0
     };
   },
+  props: {
+    musicGenre: {
+      type: String,
+      default: ''
+    }
+  },
+  computed:{
+    filterdSongs(){
+      return this.listDisc.filter((el)=>{
+        const genre=el.genre.toLowerCase()
+        const find= this.musicGenre.toLowerCase()
+        if(genre.includes(find)){
+          return true
+        }
+        return false
+      })
+    }
+
+  },
   created() {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((res) => {
-        // console.log(res.data.response);
+        console.log(res.data.response);
         this.listDisc = res.data.response;
         // console.log(this.listDisc);
       })
@@ -45,14 +63,14 @@ export default {
       })
       .finally(() => {
         console.log("Finito");
-         this.visibile()
+        this.visibile()
       });
   },
   methods: {
     visibile() {
       setTimeout(() => {
         this.contatore++
-        console.log('lanciata',+this.contatore)
+        console.log('lanciata', +this.contatore)
         this.show = true
         console.log(this.show)
       }, 2000)
